@@ -1,0 +1,150 @@
+ 外部变量定义：
+   类型： int
+   变量名：
+      ID： a
+      ID： b
+      ID： c
+ 外部变量定义：
+   类型： float
+   变量名：
+      ID： m
+      ID： n
+ 外部变量定义：
+   类型： double
+   变量名：
+      ID： x
+ 外部变量定义：
+   类型： char
+   变量名：
+      ID： y
+ 外部变量定义：
+   类型： float
+   变量名：
+      一维数组定义： 
+         ID： arr
+      SIZE: 3
+ 外部变量定义：
+   类型： int
+   变量名：
+      一维数组定义： 
+         一维数组定义： 
+            ID： arr2
+         SIZE: 1
+      SIZE: 2
+ 结构体： 
+   结构体： 
+      结构体： struct
+         ID： str
+         LOCAL VAR_NAME：
+            类型： int
+            VAR_NAME：
+                s1
+         LOCAL VAR_NAME：
+            类型： float
+            VAR_NAME：
+                s2
+ 函数定义：
+   类型： int
+   函数名：fibo
+   函数形参：
+      类型：int, 参数名：a
+   复合语句：
+      复合语句的变量定义：
+      复合语句的语句部分：
+         表达式语句：
+            INC
+               ID： b
+         表达式语句：
+            DEC
+               ID： c
+         表达式语句：
+            INCASS
+               ID： b
+               PLUS
+                  ID： a
+                  INT：1
+         表达式语句：
+            DECASS
+               ID： c
+               INT：1
+         条件语句(IF_THEN)：
+            条件：
+               OR
+                  ==
+                     ID： a
+                     INT：1
+                  ==
+                     ID： a
+                     INT：2
+            IF子句：
+               返回语句：
+                  INT：1
+         返回语句：
+            PLUS
+               函数调用：
+                  函数名：fibo
+                  第1个实际参数表达式：
+                     MINUS
+                        ID： a
+                        INT：1
+
+               函数调用：
+                  函数名：fibo
+                  第1个实际参数表达式：
+                     MINUS
+                        ID： a
+                        INT：2
+
+ 函数定义：
+   类型： int
+   函数名：main
+      无参函数
+   复合语句：
+      复合语句的变量定义：
+         LOCAL VAR_NAME：
+            类型： int
+            VAR_NAME：
+                m
+                n
+                i
+      复合语句的语句部分：
+         表达式语句：
+            ASSIGNOP
+               ID： m
+               函数调用：
+                  函数名：read
+         表达式语句：
+            ASSIGNOP
+               ID： i
+               INT：1
+         循环语句：
+            循环条件：
+               <=
+                  ID： i
+                  ID： m
+            循环体：
+               复合语句：
+                  复合语句的变量定义：
+                  复合语句的语句部分：
+                     表达式语句：
+                        ASSIGNOP
+                           ID： n
+                           函数调用：
+                              函数名：fibo
+                              第1个实际参数表达式：
+                                 ID： i
+
+                     表达式语句：
+                        函数调用：
+                           函数名：write
+                           第1个实际参数表达式：
+                              ID： n
+
+                     表达式语句：
+                        ASSIGNOP
+                           ID： i
+                           PLUS
+                              ID： i
+                              INT：1
+         返回语句：
+            INT：1
